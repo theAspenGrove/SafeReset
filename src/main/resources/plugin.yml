@@ -1,0 +1,5 @@
+name: SafeEnd
+version: ${project.version}
+main: net.mov51.SafeEnd
+api-version: 1.16
+depend: [Essentials]
