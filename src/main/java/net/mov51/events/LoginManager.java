@@ -32,21 +32,21 @@ public class LoginManager implements Listener {
         String ResetWorld = main.getConfig().getString("ResetWorld");
 
         if (ResetTime != null && ResetWorld != null) {
-            System.out.println("Time not null");
-            System.out.println("Config loaded");
+            //System.out.println("Time not null");
+            //System.out.println("Config loaded");
             World World = getWorld(ResetWorld);
             if (World != null){
-                System.out.println("World is not null" + World.toString());
+                //System.out.println("World is not null" + World.toString());
                 if (p.getWorld() == World) {
-                    System.out.println("Player in world");
+                    //System.out.println("Player in world");
                     if (Ip.getLastLogout() < Long.parseLong(ResetTime)) {
-                        System.out.println("Player outside of time");
+                        //System.out.println("Player outside of time");
                         Location TpTo = World.getSpawnLocation();
                         p.teleport(TpTo);
                     }
                 }
             }else{
-                System.out.println("World is null");
+                System.out.println("SAFEEND WARN - World is null - please correct the config!");
             }
 
         }
