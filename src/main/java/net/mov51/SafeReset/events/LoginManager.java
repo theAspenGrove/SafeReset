@@ -1,8 +1,7 @@
-package net.mov51.events;
+package net.mov51.SafeReset.events;
 
 import com.earth2me.essentials.User;
-import net.mov51.SafeEnd;
-import org.bukkit.Bukkit;
+import net.mov51.SafeReset.SafeReset;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
@@ -10,17 +9,15 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-import java.util.Objects;
-
+import static net.mov51.SafeReset.SafeReset.logger;
 import static org.bukkit.Bukkit.getWorld;
-
 
 public class LoginManager implements Listener {
 
 
-    private final SafeEnd main;
+    private final SafeReset main;
 
-    public LoginManager(SafeEnd main) {
+    public LoginManager(SafeReset main) {
         this.main = main;
     }
 
@@ -41,12 +38,14 @@ public class LoginManager implements Listener {
                     //System.out.println("Player in world");
                     if (Ip.getLastLogout() < Long.parseLong(ResetTime)) {
                         //System.out.println("Player outside of time");
+                        Location PLoc = p.getLocation();
                         Location TpTo = World.getSpawnLocation();
+                        logger.info("Player " + p.getName() + " has been 'saved' from " + PLoc.getBlockX() + ", " + PLoc.getBlockY() + ", " + PLoc.getBlockZ());
                         p.teleport(TpTo);
                     }
                 }
             }else{
-                System.out.println("SAFEEND WARN - World is null - please correct the config!");
+                logger.warning("World is null - please correct the config!");
             }
 
         }

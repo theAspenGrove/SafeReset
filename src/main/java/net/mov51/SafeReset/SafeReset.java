@@ -1,15 +1,14 @@
-package net.mov51;
+package net.mov51.SafeReset;
 
 import com.earth2me.essentials.Essentials;
-import net.mov51.events.LoginManager;
+import net.mov51.SafeReset.events.LoginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.logging.Logger;
 
-public final class SafeEnd extends JavaPlugin{
+public final class SafeReset extends JavaPlugin{
 
     public Essentials ess = (Essentials) getServer().getPluginManager().getPlugin("Essentials");
-
     public static Logger logger;
 
     @Override
