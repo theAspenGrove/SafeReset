@@ -11,6 +11,9 @@ public final class SafeReset extends JavaPlugin{
     public Essentials ess = (Essentials) getServer().getPluginManager().getPlugin("Essentials");
     public static Logger logger;
 
+    public static String ResetTime;
+    public static String ResetWorld;
+
     @Override
     public void onEnable() {
         //getLogger
@@ -19,6 +22,15 @@ public final class SafeReset extends JavaPlugin{
         // Plugin startup logic
         this.saveDefaultConfig();
         getServer().getPluginManager().registerEvents(new LoginManager(this), this);
+
+        ResetTime = this.getConfig().getString("ResetTime");
+        ResetWorld = this.getConfig().getString("ResetWorld");
+        if (ResetTime != null && ResetWorld != null) {
+            logger.info("THE WORLD ISSSSS SAVVVEEDDDD!");
+            logger.info("or rather, you are saved from it...");
+        }else{
+            logger.warning("World is null - please correct the config!");
+        }
     }
 
     @Override
