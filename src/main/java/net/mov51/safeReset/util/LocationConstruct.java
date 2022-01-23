@@ -1,4 +1,4 @@
-package net.mov51.SafeReset.util;
+package net.mov51.safeReset.util;
 
 import org.bukkit.Location;
 import org.bukkit.World;

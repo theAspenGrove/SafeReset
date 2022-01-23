@@ -1,5 +1,5 @@
 name: SafeEnd
 version: ${project.version}
-main: net.mov51.SafeEnd
+main: net.mov51.safeReset.SafeReset
 api-version: 1.16
 depend: [Essentials]

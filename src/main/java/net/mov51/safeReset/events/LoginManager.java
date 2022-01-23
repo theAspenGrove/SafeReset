@@ -1,7 +1,7 @@
-package net.mov51.SafeReset.events;
+package net.mov51.safeReset.events;
 
 import com.earth2me.essentials.User;
-import net.mov51.SafeReset.SafeReset;
+import net.mov51.safeReset.SafeReset;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
@@ -9,7 +9,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-import static net.mov51.SafeReset.SafeReset.*;
+import static net.mov51.safeReset.SafeReset.*;
 import static org.bukkit.Bukkit.getWorld;
 
 public class LoginManager implements Listener {

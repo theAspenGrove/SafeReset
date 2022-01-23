@@ -1,7 +1,7 @@
-package net.mov51.SafeReset;
+package net.mov51.safeReset;
 
 import com.earth2me.essentials.Essentials;
-import net.mov51.SafeReset.events.LoginManager;
+import net.mov51.safeReset.events.LoginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.logging.Logger;
