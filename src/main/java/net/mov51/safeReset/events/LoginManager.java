@@ -1,6 +1,8 @@
 package net.mov51.safeReset.events;
 
 import com.earth2me.essentials.User;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.TextColor;
 import net.mov51.safeReset.SafeReset;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -26,22 +28,21 @@ public class LoginManager implements Listener {
         Player p = e.getPlayer();
         User Ip = main.ess.getUser(p);
 
-        //System.out.println("Time not null");
-        //System.out.println("Config loaded");
         World World = getWorld(ResetWorld);
         if (World != null){
-            //System.out.println("World is not null" + World.toString());
+//            System.out.println("World is not null" + World.toString());
             if (p.getWorld() == World) {
-                //System.out.println("Player in world");
+//                System.out.println("Player in world");
                 if (Ip.getLastLogout() < Long.parseLong(ResetTime)) {
-                    //System.out.println("Player outside of time");
+//                    System.out.println("Player outside of time");
                     Location PLoc = p.getLocation();
                     Location TpTo = World.getSpawnLocation();
                     logger.info("Player " + p.getName() + " has been 'saved' from " + PLoc.getBlockX() + ", " + PLoc.getBlockY() + ", " + PLoc.getBlockZ());
                     p.teleport(TpTo);
+                    String prefix = "Safe-Reset ";
+                    p.sendMessage(Component.text().append(Component.text(prefix).color(TextColor.fromHexString("#7304D1"))).append(Component.text(" You've been teleported to a safe location by Staff because this world was reset since you last entered it!")));
                 }
             }
-
         }
     }
 }
