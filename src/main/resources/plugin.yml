@@ -1,4 +1,4 @@
-name: SafeEnd
+name: SafeReset
 version: ${project.version}
 main: net.mov51.safeReset.SafeReset
 api-version: 1.16
